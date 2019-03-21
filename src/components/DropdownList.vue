@@ -75,7 +75,7 @@ export default {
   methods: {
     skipElement(howMany) {
       const newElement = this.pickedElement + howMany;
-      if (newElement > this.count) {
+      if (newElement > this.count - 1) {
         this.pickedElement = 0;
       } else if (newElement < 0) {
         this.pickedElement = this.count;
