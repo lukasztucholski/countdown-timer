@@ -12,6 +12,12 @@
       <h2 class="default-h2 timer__title">
         LEFT
       </h2>
+      <p
+        v-if="timer.status === 'past'"
+        class="past"
+      >
+        OOOPS... THE TIME HAS PASSED ...
+      </p>
       <div class="timer__timer">
         <p
           v-for="obj in renderedTimer"
@@ -98,15 +104,22 @@ export default {
   },
   methods: {
     updateTime() {
-      setInterval(() => {
+      const interval = setInterval(() => {
         this.now = new Date().getTime();
         const temp = {};
-        temp.miliseconds = this.date - this.now;
+        if (this.date <= this.now) {
+          temp.status = 'past';
+          temp.miliseconds = this.now - this.date;
+        } else {
+          temp.miliseconds = this.date - this.now;
+          temp.status = 'future';
+        }
         temp.seconds = temp.miliseconds / 1000;
         temp.minutes = temp.seconds / 60;
         temp.hours = temp.minutes / 60;
         temp.days = temp.hours / 24;
         this.timer = temp;
+        
       }, 1);
     },
   },

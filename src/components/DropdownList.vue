@@ -25,11 +25,11 @@
       >
         <ul>
           <li
-            v-for="h in count"
-            :key="h"
-            @click="pickedElement = h; expand = false"
+            v-for="(h, i) in count"
+            :key="i"
+            @click="pickedElement = i; expand = false"
           >
-            {{ h }}
+            {{ i }}
           </li>
         </ul>
       </div>

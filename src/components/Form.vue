@@ -27,14 +27,14 @@
         </h2>
         <div class="time__pickers">
           <Time
-            :count="23"
+            :count="24"
             :time="date.getHours()"
             @pickedElement="pickedHour($event)"
           >
             HH
           </Time>
           <Time
-            :count="59"
+            :count="60"
             :time="date.getMinutes()"
             @pickedElement="pickedMinutes($event)"
           >
