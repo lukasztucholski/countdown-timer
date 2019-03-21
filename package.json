@@ -1,6 +1,6 @@
 {
   "name": "countdown-timer",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "countdown timer with your custom text",
   "main": "index.js",
   "scripts": {
