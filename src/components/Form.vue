@@ -82,15 +82,27 @@ export default {
     submitForm() {
       const db = firebase.firestore();
       const id = Math.random().toString(36).substring(2, 5) + Math.random().toString(36).substring(2, 5);
-      db.collection('timers').doc(id).set({
-        date: this.date.getTime(),
-        text: this.text,
-      })
-        .then(() => {
-          this.$router.push(`/${id}`);
+      db.collection('timers').where('id', '==', id)
+        .get()
+        .then((querySnapshot) => {
+          if (querySnapshot.empty) {
+            db.collection('timers').doc(id).set({
+              date: this.date.getTime(),
+              text: this.text,
+              id,
+            })
+              .then(() => {
+                this.$router.push(`/${id}`);
+              })
+              .catch((error) => {
+                console.log('Error writing document: ', error);
+              });
+          } else {
+            this.submitForm();
+          }
         })
         .catch((error) => {
-          console.error('Error writing document: ', error);
+          console.log('Error getting documents: ', error);
         });
     },
     pickedDate(test) {
