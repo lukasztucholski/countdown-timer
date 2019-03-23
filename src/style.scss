@@ -309,36 +309,40 @@ body, html {
   align-items: center;
   width: 100%;
 }
-.timer__time {
+.timer__countdown {
   align-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80%;
   font-size: 15px;
-}
-.timer__timer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  font-style: italic;
-  width: 100%;
-  .timer__count {
-    margin: 0px 10px;
-    font-size: 50px;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 500;
-    font-style: normal;
-    vertical-align: middle;
-  }
-  p:last-child {
-    .timer__count { 
-    font-size: 20px;
+  div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-style: italic;
+    width: 100%;
+    .timer__digits {
+      margin: 0px 10px;
+      font-size: 50px;
+      font-family: 'Roboto Mono', monospace;
+      font-weight: 500;
+      font-style: normal;
+      vertical-align: middle;
+    }
+    p:last-child {
+      .timer__digits { 
+      font-size: 20px;
+      }
     }
   }
 }
-.past {
-  font-size: 50px;
-  margin: 0px 0 30px 0;
+.timer__past-countdown {
+  font-size: 45px;
+  margin: 0px 0 50px 0;
   color: rgb(160, 55, 55);
+  border: 1px $lightShadow solid;
+  box-shadow: 2px 2px 20px 0px $darkShadow;
+  padding: 10px 40px;
+  border-radius: 20px;
 }

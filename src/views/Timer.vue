@@ -8,22 +8,22 @@
         {{ text }}
       </p>
     </div>
-    <div class="timer__time">
+    <div class="timer__countdown">
       <h2 class="default-h2 timer__title">
         LEFT
       </h2>
       <p
         v-if="timer.status === 'past'"
-        class="past"
+        class="timer__past-countdown"
       >
-        OOOPS... THE TIME HAS PASSED ...
+        OOOPS... THE TIME HAS PASSED...
       </p>
-      <div class="timer__timer">
+      <div>
         <p
           v-for="obj in renderedTimer"
           :key="obj.text"
         >
-          <span class="timer__count">
+          <span class="timer__digits">
             {{ obj.count }}
           </span>
           {{ obj.text }}
