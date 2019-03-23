@@ -263,10 +263,12 @@ body, html {
 .dropdown__input-text {
   cursor: pointer;
 }
-.list {
+.dropdown__list {
   position: absolute;
   top: 100%;
-  left: 20%;
+  max-height: 150px;
+  margin: 3px 0;
+  overflow: auto;
   background: $ligtDarkBackground;
   box-shadow: inset 0 -2px $moreLight;
   border: 1px solid $moreLight;

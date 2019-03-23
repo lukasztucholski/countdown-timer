@@ -21,7 +21,7 @@
       </span>
       <div
         v-if="expand"
-        class="list"
+        class="dropdown__list"
       >
         <ul>
           <li
