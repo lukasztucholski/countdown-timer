@@ -81,7 +81,7 @@ export default {
   methods: {
     submitForm() {
       const db = firebase.firestore();
-      const id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+      const id = Math.random().toString(36).substring(2, 5) + Math.random().toString(36).substring(2, 5);
       db.collection('timers').doc(id).set({
         date: this.date.getTime(),
         text: this.text,
