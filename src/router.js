@@ -14,14 +14,14 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        title: 'Countdown Timer by ŁT',
+        title: 'Countdown Timer',
       },
     },
     {
       path: '/:timerId',
       component: Timer,
       meta: {
-        title: 'Custom Timer From DB',
+        title: 'Countdown Timer',
       },
       props: true,
     },
