@@ -6,10 +6,14 @@
       </h2>
       <input
         v-model="text"
+        maxlength="100"
         type="text"
         placeholder="Your custom task, reminder, info or whatever else you want!"
         class="input-text"
       >
+      <p class="length-info">
+        Characters Left: {{ charactersLeft }}
+      </p>
       <p class="arrow-down" />
     </div>
 
@@ -71,6 +75,11 @@ export default {
       text: '',
       date: new Date(),
     };
+  },
+  computed: {
+    charactersLeft() {
+      return 100 - this.text.length;
+    },
   },
   created() {
     this.date.setMilliseconds(0);

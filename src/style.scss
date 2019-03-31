@@ -71,8 +71,6 @@ body, html {
 .app {
   padding: 2vw;
 }
-.form {
-}
 .form__submit-btn {
   display: block;
   margin: 3vw auto;
@@ -196,9 +194,9 @@ body, html {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
 }
-.dropdown__footer {
+.dropdown__footer, .length-info {
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.6em;
   font-style: italic;
   color: $darkShadow;
   text-shadow: none;
@@ -298,6 +296,9 @@ body, html {
     &::placeholder {
       font-size: 1em;
     }
+  }
+  .dropdown__footer, .length-info {
+    font-size: 0.8em;
   }
   .timer__digit {
     font-size: 4em;
