@@ -228,60 +228,52 @@ body, html {
     border-radius: 2vw;
   }
 }
-
-
-
-
-// Timer view
 .timer {
-  display: flex;
-  flex-direction: column;
-  .timer__title {
-    margin: 2% 0 0 0;
+  .h2 {
+    font-size: 0.6em;
+    &:after {
+      width: 13px;
+      height: 13px;
+      background-position-y: 2px;
+    }
   }
 }
 .timer__text {
   text-align: center;
   p {
-    font-size: 2.3em;
-    margin: 4% 0;
+    font-size: 1.3em;
+    margin: 5% auto;
   }
 }
-.timer__countdown {
-  align-self: center;
+.timer__counting {
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
-  div {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    font-style: italic;
-    width: 100%;
-    .timer__digits {
-      margin: 0px 10px;
-      font-size: 4em;
-      font-family: 'Roboto Mono', monospace;
-      font-weight: 500;
-      font-style: normal;
-      vertical-align: middle;
-    }
-    p:last-child {
-      .timer__digits { 
-      font-size: 1.5em;
-      }
+  font-style: italic;
+  p:last-child {
+    .timer__digit { 
+    font-size: 1.2em;
     }
   }
 }
-.timer__past-countdown {
-  font-size: 1.5em;
-  margin: 2% 0;
+.timer__digit {
+  font-size: 1.8em;
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  font-style: normal;
+  vertical-align: middle;
+}
+.timer__past-info {
+  width: 60%;
+  font-size: 0.8em;
+  text-align: center;
+  margin: 3% auto 1% auto;
   color: rgb(160, 55, 55);
   border: 1px $lightShadow solid;
-  box-shadow: 2px 2px 20px 0px $darkShadow;
-  padding: 10px 40px;
-  border-radius: 20px;
+  box-shadow: 1vw 1vw 5vw 0px $darkShadow;
+  padding: 2vw 5vw;
+  border-radius: 2vw;
 }
 
 
@@ -291,11 +283,29 @@ body, html {
       font-size: 0.6em;
     }
   }
+  .timer__digit {
+    font-size: 2.7em;
+
+  }
+  .timer__text {
+    p {
+      font-size: 1.8em;
+    }
+  }
 }
 @media (min-width: 600px) {
   .input-text {
     &::placeholder {
       font-size: 1em;
+    }
+  }
+  .timer__digit {
+    font-size: 4em;
+
+  }
+  .timer__text {
+    p {
+      font-size: 2.2em;
     }
   }
 }
@@ -325,31 +335,64 @@ body, html {
     position: absolute;
     width: 15vw;
   }
+  .timer {
+    .h2 {
+      font-size: 1em;
+    }
+  }
+  .timer__counting {
+    p:last-child {
+      .timer__digit { 
+      font-size: 1.5em;
+      }
+    }
+  }
+  .timer__digit {
+    font-size: 5em;
+    margin: 3% auto;
+  } 
+}
+@media (min-width: 800px) {
+  .timer {
+    .h2 {
+      &:after {
+        width: 18px;
+        height: 18px;
+        background-position-y: 3px;
+      }
+    }
+  }
+  .timer__counting {
+    flex-direction: row;
+    justify-content: space-evenly;
+    p:last-child {
+      .timer__digit { 
+      font-size: 1em;
+      }
+    }
+  }
+  .timer__digit {
+    font-size: 2.8em;
+  } 
+  .timer__past-info {
+    font-size: 1.3em;
+    margin: 3% auto 1% auto;
+    border-radius: 1.5vw;
+  }
 }
 @media (min-width: 1280px) {
   .form {
     display: grid;
     grid-column-gap: 0.5%;
-    // grid-template-columns: 50% 30% 18%;
-    // grid-template-rows: auto;
-    // grid-template-areas:
-    // "text empty1 empty1"
-    // "text date empty2"
-    // "empty3 date empty2"
-    // "empty3 date submit"
-    // "empty3 empty4 submit";
-
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 0.5fr 2.2fr 0.4fr 1.4fr;
-      grid-template-areas: 
-      "text . ."
-      "text date ."
-      ". date ."
-      ". date submit"
-      ". . submit";
-
-
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-template-rows: 1fr 0.5fr 2.2fr 0.4fr 1.4fr;
+     grid-template-areas: 
+     "text . ."
+     "text date ."
+     ". date ."
+     ". date submit"
+     ". . submit";
   }
   .form__text {
     grid-area: text;
@@ -409,5 +452,30 @@ body, html {
     position: absolute;
     width: 50%;
     top: 100%;
+  }
+  .timer {
+    .h2 {
+      font-size: 1.5em;
+      &:after {
+        width: 22px;
+        height: 22px;
+        background-position-y: 3px;
+      }
+    }
+  }
+  .timer__digit {
+    font-size: 6em;
+
+  }
+  .timer__text {
+    p {
+      font-size: 3em;
+      margin: 3% auto;
+    }
+  }
+  .timer__past-info {
+    font-size: 2.5em;
+    margin: 2% auto 0 auto;
+    border-radius: 1vw;
   }
 }

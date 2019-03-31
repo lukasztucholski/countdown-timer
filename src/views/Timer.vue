@@ -1,29 +1,29 @@
 <template>
   <div class="timer">
     <div class="timer__text">
-      <h2 class="h2 timer__title">
+      <h2 class="h2">
         THE EVENT
       </h2>
       <p>
         {{ text }}
       </p>
     </div>
-    <div class="timer__countdown">
-      <h2 class="h2 timer__title">
+    <div class="timer__counting-div">
+      <h2 class="h2">
         LEFT
       </h2>
       <p
         v-if="timer.status === 'past'"
-        class="timer__past-countdown"
+        class="timer__past-info"
       >
         OOOPS... THE TIME HAS PASSED...
       </p>
-      <div>
+      <div class="timer__counting">
         <p
           v-for="obj in renderedTimer"
           :key="obj.text"
         >
-          <span class="timer__digits">
+          <span class="timer__digit">
             {{ obj.count }}
           </span>
           {{ obj.text }}
@@ -119,7 +119,6 @@ export default {
         temp.hours = temp.minutes / 60;
         temp.days = temp.hours / 24;
         this.timer = temp;
-        
       }, 1);
     },
   },
