@@ -235,20 +235,16 @@ body, html {
 .timer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  height: 100%;
-  padding: 2% 5%;
   .timer__title {
-    margin: 50px 0;
+    margin: 2% 0 0 0;
   }
 }
 .timer__text {
-  font-size: 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
+  text-align: center;
+  p {
+    font-size: 2.3em;
+    margin: 4% 0;
+  }
 }
 .timer__countdown {
   align-self: center;
@@ -256,7 +252,6 @@ body, html {
   flex-direction: column;
   align-items: center;
   width: 80%;
-  font-size: 15px;
   div {
     display: flex;
     justify-content: space-evenly;
@@ -265,7 +260,7 @@ body, html {
     width: 100%;
     .timer__digits {
       margin: 0px 10px;
-      font-size: 50px;
+      font-size: 4em;
       font-family: 'Roboto Mono', monospace;
       font-weight: 500;
       font-style: normal;
@@ -273,14 +268,14 @@ body, html {
     }
     p:last-child {
       .timer__digits { 
-      font-size: 20px;
+      font-size: 1.5em;
       }
     }
   }
 }
 .timer__past-countdown {
-  font-size: 45px;
-  margin: 0px 0 50px 0;
+  font-size: 1.5em;
+  margin: 2% 0;
   color: rgb(160, 55, 55);
   border: 1px $lightShadow solid;
   box-shadow: 2px 2px 20px 0px $darkShadow;

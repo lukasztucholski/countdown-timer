@@ -1,7 +1,7 @@
 <template>
   <div class="timer">
     <div class="timer__text">
-      <h2 class="default-h2 timer__title">
+      <h2 class="h2 timer__title">
         THE EVENT
       </h2>
       <p>
@@ -9,7 +9,7 @@
       </p>
     </div>
     <div class="timer__countdown">
-      <h2 class="default-h2 timer__title">
+      <h2 class="h2 timer__title">
         LEFT
       </h2>
       <p
