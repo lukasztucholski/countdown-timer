@@ -1,38 +1,37 @@
 <template>
   <div>
-    <div class="default-text-input dropdown">
-      <span
-        class="dropdown__nav"
-        @click="skipElement(1)"
-      >
-        +
-      </span>
-      <span
-        class="dropdown__input-text"
-        @click="expand = !expand"
-      >
-        {{ pickedElementString }}
-      </span>
+    <div class="dropdown">
       <span
         class="dropdown__nav"
         @click="skipElement(-1)"
       >
         -
       </span>
-      <div
+      <span
+        class="dropdown__value"
+        @click="expand = !expand"
+      >
+        {{ pickedElementString }}
+      </span>
+      <span
+        class="dropdown__nav"
+        @click="skipElement(1)"
+      >
+        +
+      </span>
+      <ul
         v-if="expand"
         class="dropdown__list"
       >
-        <ul>
-          <li
-            v-for="(h, i) in count"
-            :key="i"
-            @click="pickedElement = i; expand = false"
-          >
-            {{ i }}
-          </li>
-        </ul>
-      </div>
+        <li
+          v-for="(h, i) in count"
+          :key="i"
+          class="dropdown__list-element"
+          @click="pickedElement = i; expand = false"
+        >
+          {{ i }}
+        </li>
+      </ul>
     </div>
     <div class="dropdown__footer">
       <slot />
@@ -88,4 +87,5 @@ export default {
 </script>
 
 <style>
+
 </style>

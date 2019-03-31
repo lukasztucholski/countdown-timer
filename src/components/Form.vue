@@ -1,56 +1,54 @@
 <template>
   <form class="form">
-    <h1 class="default-h1 form__title">
-      Create Your Custom Countdown Timer!
-    </h1>
-    <div class="form__column text">
-      <h2 class="default-h2 text__title">
+    <div class="form__text">
+      <h2 class="h2">
         ENTER YOUR TEXT
       </h2>
       <input
         v-model="text"
         type="text"
         placeholder="Your custom task, reminder, info or whatever else you want!"
-        class="default-text-input text__input"
+        class="input-text"
       >
-      <p class="default-form__footer" />
+      <p class="arrow-down" />
     </div>
-    <div class="form__column date">
-      <h2 class="default-h2 date__title">
+
+    <div class="form__date">
+      <h2 class="h2">
         CHOOSE THE DATE
       </h2>
       <Calendar @pickedDate="pickedDate($event)" />
-      <div class="time">
-        <p class="date__arrow" />
-        <h2 class="default-h2">
-          CHOOSE THE TIME
-        </h2>
-        <div class="time__pickers">
-          <Time
-            :count="24"
-            :time="date.getHours()"
-            @pickedElement="pickedHour($event)"
-          >
-            HH
-          </Time>
-          <Time
-            :count="60"
-            :time="date.getMinutes()"
-            @pickedElement="pickedMinutes($event)"
-          >
-            MM
-          </Time>
-        </div>
-      </div>
+      <p class="arrow-down" />
 
-      <p class="default-form__footer" />
+      <h2 class="h2">
+        CHOOSE THE TIME
+      </h2>
+
+      <div class="time__pickers">
+        <Time
+          :count="24"
+          :time="date.getHours()"
+          @pickedElement="pickedHour($event)"
+        >
+          HH
+        </Time>
+        <Time
+          :count="60"
+          :time="date.getMinutes()"
+          @pickedElement="pickedMinutes($event)"
+        >
+          MM
+        </Time>
+      </div>
+      <p class="arrow-down" />
     </div>
-    <div class="form__column submit">
-      <h2 class="default-h2 submit__title">
+
+    <div class="form__submit">
+      <h2 class="h2">
         AND CREATE YOUR TIMER!
       </h2>
       <button
-        class="submit__btn"
+        class="form__submit-btn"
         type="submit"
         @click.prevent="submitForm()"
       >

@@ -4,7 +4,7 @@
       v-model="pickedDate"
       readonly="readonly"
       type="text"
-      class="default-text-input date-picker__input"
+      class="input-text date-picker__input"
       @click="showCalendar = !showCalendar"
     >
     <div
@@ -40,13 +40,14 @@
         </p>
       </div>
       <table
-        class="calendar__days"
+        class="calendar__days-table"
       >
         <thead>
           <tr>
             <td
               v-for="(dayName, index) in daysNames"
               :key="index"
+              class="calendar__day-name"
             >
               {{ dayName }}
             </td>
@@ -60,6 +61,7 @@
             <td
               v-for="(d, j) in 7"
               :key="j"
+              class="calendar__day-numb"
               :class="days[i * 7 + j].status"
               @click="pickDate(i * 7 + j)"
             >
