@@ -4,4 +4,4 @@ Using Vue.js and Firebase's Cloud Firestore.
 
 Full RWD with Flexbox & CSS Grid.
 
-Live Demo: http://lukasztucholski.pl/timer
+Live Demo: http://devtuch.webd.pro
